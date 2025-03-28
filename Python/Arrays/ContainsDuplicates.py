@@ -37,3 +37,7 @@ def containsDuplicate(self, nums: List[int]) -> bool:
         d[num] = 1
     
     return False
+
+# 1 Liner answer using a set
+def containsDuplicate(self, nums: List[int]) -> bool:
+    return len(nums) != len(set(nums))
