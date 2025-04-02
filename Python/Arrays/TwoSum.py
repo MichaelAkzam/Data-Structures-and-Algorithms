@@ -10,6 +10,7 @@
 
 # - Time complexity:
 '''
+O(N) as we need to traverse the given list to populate our dictionary (Beats 100% of solutions on LeetCode)
 '''
 
 # - Space complexity:
