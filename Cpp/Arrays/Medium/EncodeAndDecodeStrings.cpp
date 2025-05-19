@@ -8,12 +8,14 @@ Intuition
     the current delimiter and the next one.
 
 Approach
-
+    So after careful examination, having a fixed delimiter would not work, as there would be cases where it just is not detectable and wouldnt work. So the best next case would
+    be to set the delimiter to a character of your choice with the length of the string we are encoding/decoding. This way, we would always know exactly how many characters to 
+    extract every time. 
 
 Complexity
-- Time complexity:
+- Time complexity: O(N) + O(N) for each encode/decode function
 
-- Space complexity:
+- Space complexity: O(N) for allocation of vectors
 
 */
 
