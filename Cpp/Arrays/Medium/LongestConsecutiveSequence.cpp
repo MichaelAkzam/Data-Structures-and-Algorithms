@@ -46,13 +46,13 @@ int longestConsecutive(std::vector<int>& nums) {
     }
     return maxCount;
 }
+
 #include <unordered_set>
 // Optimal Solution
 int longestConsecutive(std::vector<int>& nums) {
     if(nums.size() == 0){
         return 0;
     }
-
     int counter = 1, longest = 1;
     std::unordered_set<int> numSet(nums.begin(), nums.end());
 
@@ -67,6 +67,35 @@ int longestConsecutive(std::vector<int>& nums) {
             longest = std::max(longest, counter);
         }
         counter = 1;
+    }
+    return longest;
+}
+
+#include <unordered_map>
+// Optimal Solution with hash map
+int longestConsecutive(std::vector<int>& nums) {
+
+    if (nums.size() == 0)
+        return 0;
+
+    std::unordered_map<int, int> map;
+    int longest = 1;
+
+    for(int i = 0; i < nums.size(); i++){
+        map[nums[i]] = 1;
+    }
+    
+    for(auto& num : map){
+        int key = num.first, counter = 1;
+        if(map.count(key-1))
+            continue;
+        else{
+            while(map.count(key+1)){
+                counter++;
+                longest = std::max(counter, longest);
+                key++;
+            }
+        }
     }
     return longest;
 }
