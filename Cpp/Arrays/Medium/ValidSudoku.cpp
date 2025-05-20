@@ -13,6 +13,7 @@ Complexity
 */
 
 #include <unordered_set>
+#include <vector>
 
 bool isValidSudoku(std::vector<std::vector<char>>& board) {
     const int n = board[0].size();

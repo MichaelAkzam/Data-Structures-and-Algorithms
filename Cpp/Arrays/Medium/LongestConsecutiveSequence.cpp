@@ -13,6 +13,7 @@ Complexity
 */
 
 #include <queue>
+#include <vector>
 // Unoptimal O(NlogN) solution
 int longestConsecutive(std::vector<int>& nums) {
     std::priority_queue<int, std::vector<int>, std::greater<int>> minHeap;

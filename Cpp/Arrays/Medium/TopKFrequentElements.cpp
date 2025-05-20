@@ -14,6 +14,7 @@ Complexity
 
 #include <queue>
 #include <unordered_map>
+#include <vector>
 
 std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
     std::unordered_map<int, int> map;
