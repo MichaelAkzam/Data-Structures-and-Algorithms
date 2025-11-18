@@ -47,6 +47,23 @@ TreeNode* createTree(int totalNodes){
     }
     return root;
 }
+// Node -> left -> right with print within
+void printPreOrder(TreeNode* root){
+    std::stack<TreeNode*> s;
+    s.push(root);
+    std::cout << "[";
+    bool first = true;
+    while(!s.empty()){
+        TreeNode* node = s.top(); s.pop();
+        if(!first) std::cout << ", ";
+        first = false;
+        std::cout << node->val;
+        
+        if(node->right) s.push(node->right);
+        if(node->left) s.push(node->left);
+    }
+    std::cout << "]" << std::endl;
+}
 
 // Node -> Left -> Right
 void printPreOrder(TreeNode *root){
@@ -124,7 +141,7 @@ void printPostOrder(TreeNode *root){
 }
 
 int main() {
-    TreeNode* tree = createTree(9);
+    TreeNode* tree = createTree(5);
     std::cout << "Pre Order is: ";  printPreOrder(tree);
     std::cout << "In Order is : ";   printInOrder(tree);
     std::cout << "Post Order is:"; printPostOrder(tree);
